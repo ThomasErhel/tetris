@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tetris/static/css/main.5bf05459.css",
+    "main.js": "/tetris/static/js/main.088b4fea.js",
+    "static/js/787.0ef42b96.chunk.js": "/tetris/static/js/787.0ef42b96.chunk.js",
+    "index.html": "/tetris/index.html",
+    "main.5bf05459.css.map": "/tetris/static/css/main.5bf05459.css.map",
+    "main.088b4fea.js.map": "/tetris/static/js/main.088b4fea.js.map",
+    "787.0ef42b96.chunk.js.map": "/tetris/static/js/787.0ef42b96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5bf05459.css",
+    "static/js/main.088b4fea.js"
+  ]
+}
