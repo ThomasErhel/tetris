@@ -1,8 +1,6 @@
 import { createContext } from "react";
 
-interface BoardContextType {
-  // Ajoutez ici les propriétés et les types nécessaires pour votre contexte
-}
+interface BoardContextType {}
 
 const BoardContext = createContext<BoardContextType | undefined>(undefined);
 

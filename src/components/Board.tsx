@@ -43,7 +43,6 @@ const Board: React.FC<BoardProps> = ({
       y: 0,
     };
 
-    // Vérifier si le nouveau tétrimino provoque une collision à la position de départ
     if (collision(board, newTetromino, startPosition)) {
       onGameOver();
     } else {
@@ -75,7 +74,6 @@ const Board: React.FC<BoardProps> = ({
   ): BoardGrid => {
     const mergedBoard = board.map((row, y) => {
       return row.map((cell, x) => {
-        // Si la cellule du tétrimino est occupée, retourner la couleur, sinon garder la valeur actuelle de la cellule du tableau
         if (
           tetromino[y - position.y] &&
           tetromino[y - position.y][x - position.x]
@@ -102,12 +100,10 @@ const Board: React.FC<BoardProps> = ({
   );
 
   const rotate = useCallback(() => {
-    // Faire pivoter le tétrimino
     const rotatedTetromino = tetromino[0]
       .map((_, index) => tetromino.map((row) => row[index]))
       .reverse();
 
-    // Vérifier si la rotation provoque une collision
     if (!collision(board, rotatedTetromino, position)) {
       setTetromino(rotatedTetromino);
     }
@@ -177,7 +173,7 @@ const Board: React.FC<BoardProps> = ({
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleKeyDown, gameStarted]); // Ajoutez gameStarted ici
+  }, [handleKeyDown, gameStarted]);
 
   useEffect(() => {
     if (!gameStarted) return;
@@ -189,7 +185,7 @@ const Board: React.FC<BoardProps> = ({
     return () => {
       clearInterval(timer);
     };
-  }, [onGameOver, moveDown, gameStarted]); // Ajoutez gameStarted ici
+  }, [onGameOver, moveDown, gameStarted]);
 
   useEffect(() => {
     if (gameStarted) {
