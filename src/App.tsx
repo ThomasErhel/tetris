@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Board from "./components/Board";
-import BoardContext from "./context/BoardContext";
 
 const linePoints = [0, 40, 100, 300, 1200];
 const level = 0;
-const gameOver = false;
 
 function App() {
   const [score, setScore] = useState<number>(0);
@@ -22,20 +20,11 @@ function App() {
   return (
     <div className="App">
       <h1>Tetris</h1>
-      <BoardContext.Provider
-        value={{
-          gameOver,
-          score,
-          onScoreUpdate: onScoreUpdate,
-        }}
-      >
-        <Board
-          onGameOver={resetGame}
-          gameStarted={gameStarted}
-          onScoreUpdate={onScoreUpdate}
-        />
-      </BoardContext.Provider>
-
+      <Board
+        onGameOver={resetGame}
+        gameStarted={gameStarted}
+        onScoreUpdate={onScoreUpdate}
+      />
       <div>
         <h2>Score: {score}</h2>
         {!gameStarted ? (
